@@ -29,8 +29,9 @@
         <div style="float: left; padding-right: 15px;">
             <?php whm_one::render_image('comment.png'); ?>
         </div>
-        <div>
-            <strong><?php echo $commentCount ?></strong> Kommentar<?php if ($commentCount != 1) echo "e" ?>
+        <div style="line-height: 1.4em;">
+            <strong><?php echo $commentCount ?></strong> Kommentar<?php if ($commentCount != 1) echo "e" ?> <br/>
+             Kategorie: <strong><?php echo $firstCategory; ?></strong>.
         </div>
     </div>
 

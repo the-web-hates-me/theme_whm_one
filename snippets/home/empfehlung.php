@@ -18,10 +18,12 @@
         ?>
         <div>
             <div style="width: 300px; padding-right: 26px; float: left; padding-bottom: 26px;">
-                <?php echo get_the_post_thumbnail( $postId ); ?>
+                <a href="<?php echo get_permalink( $postId );?>"><?php echo get_the_post_thumbnail( $postId ); ?></a>
             </div>
             <div>
-                <div class="headline" style="font-size:1.5em"><?php echo $post->post_title; ?></div>
+                <div class="headline" style="font-size:1.5em">
+                    <a href="<?php echo get_permalink( $postId );?>"><?php echo $post->post_title; ?></a>
+                </div>
                 <?php echo substr(strip_tags($post->post_content), 0, 600); ?> [...]
                 <a href="<?php echo get_permalink( $postId );?>">weiterlesen</a>
 
