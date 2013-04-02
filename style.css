@@ -1,0 +1,421 @@
+/*
+Theme Name: whm_one
+Theme URI: https://github.com/the-web-hates-me/theme_whm_one
+Author: the whm team
+Author URI: http://www.thewebhatesme.com
+Description: First layout for the web hates me blog.
+Version: 1.0
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* =Notes
+--------------------------------------------------------------
+This stylesheet uses rem values with a pixel fallback. The rem
+values (and line heights) are calculated using two variables:
+
+$rembase:     14;
+$line-height: 24;
+
+---------- Examples
+
+* Use a pixel value with a rem fallback for font-size, padding, margins, etc.
+	padding: 5px 0;
+	padding: 0.357142857rem 0; (5 / $rembase)
+
+* Set a font-size and then set a line-height based on the font-size
+	font-size: 16px
+	font-size: 1.142857143rem; (16 / $rembase)
+	line-height: 1.5; ($line-height / 16)
+
+---------- Vertical spacing
+
+Vertical spacing between most elements should use 24px or 48px
+to maintain vertical rhythm:
+
+.my-new-div {
+	margin: 24px 0;
+	margin: 1.714285714rem 0; ( 24 / $rembase )
+}
+
+---------- Further reading
+
+http://snook.ca/archives/html_and_css/font-size-with-rem
+http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
+
+
+/* =Reset
+-------------------------------------------------------------- */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+	{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+blockquote,q {
+	quotes: none;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption,th,td {
+	font-weight: normal;
+	text-align: left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	clear: both;
+}
+
+html {
+	overflow-y: scroll;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section
+	{
+	display: block;
+}
+
+audio,canvas,video {
+	display: inline-block;
+}
+
+audio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:not
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(
+[
+controls
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+)
+{
+display
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+none
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+}
+del {
+	color: #333;
+}
+
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin: 24px;
+	margin-bottom: 1.714285714rem;
+}
+
+sub,sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+small {
+	font-size: smaller;
+}
+
+img {
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+
+/* Clearing floats */
+.clear:after,.wrapper:after,.format-status .entry-header:after {
+	clear: both;
+}
+
+.clear:before,.clear:after,.wrapper:before,.wrapper:after,.format-status .entry-header:before,.format-status .entry-header:after
+	{
+	display: table;
+	content: "";
+}
+
+/* =Repeatable patterns
+-------------------------------------------------------------- */
+/* Pink: e30083 */
+body {
+	font-size: 13px;
+	font-family: Helvetica, Arial, sans-serif;
+	text-rendering: optimizeLegibility;
+	color: #444;
+	text-align: center
+}
+
+a {
+	color: #e30083;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+#header {
+	margin: 0px auto;
+	text-align: left;
+	width: 1280px;
+	padding-top: 50px;
+}
+
+#content-body {
+	padding-top: 40px;
+	margin: 0px auto;
+	text-align: left;
+	width: 1280px;
+	margin: 0px auto;
+}
+
+.content {
+	float: left;
+	width: 940px;
+	margin-right: 20px;
+}
+
+.sidebar {
+	float: right;
+	#background-color: blue;
+	width: 300px
+}
+
+.headline {
+	font-family: 'Economica', sans-serif;
+	font-size: 2em;
+	font-weight: normal;
+	margin-bottom: 15px;
+}
+
+.single_2col {
+	width: 600px;
+	float: left;
+	padding-right: 45px;
+}
+
+.single_2col .kicker {
+	position: relative;
+	left: -45px;
+	font-size: 0.8em;
+	margin-bottom: 5px;
+}
+
+.single_2col .category {
+	position: relative;
+	left: -60px;
+	float: left;
+	margin-right: 0px;
+	padding-right: 0px
+}
+
+.single_2col .title {
+	position: relative;
+	left: -45px;
+	margin-left: 0px;
+	font-family: 'Economica', sans-serif;
+}
+
+.single_2col .excerpt {
+	line-height: 2em;
+}
+
+.kolumnen {
+	padding-top: 15px;
+}
+
+.kolumnen ul {
+	margin-left: 620px;
+	border-left: 1px solid #c0c0c0;
+}
+
+.kolumnen li {
+	padding-top: 8px;
+}
+
+.kolumnen li:first-child {
+	padding-top: 0px;
+}
+
+.kolumnen p {
+	font-size: 0.9em;
+	line-height: 1.2em;
+}
+
+.content-element:FIRST-CHILD {
+	padding-top: 0px;
+}
+
+.content-element {
+	padding-top: 60px;
+}
