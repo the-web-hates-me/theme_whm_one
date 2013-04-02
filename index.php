@@ -14,7 +14,9 @@
  * @since Twenty Twelve 1.0
  */
 
+include_once __DIR__.'/config/home.config.php';
 get_header(); ?>
+
 
 <div id="content-body">
 	<div class="content">

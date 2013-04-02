@@ -1,5 +1,10 @@
 <?php
+
 class whm_one {
+	const ENVIRONMENT_LOCAL = "local";
+	const ENVIRONMENT_BETA = "beta";
+	const ENVIRONMENT_LIVE = "live";
+
 	static function render_snippet($snippetName) {
 		$snippetFile = __DIR__ . "/snippets/" . $snippetName . ".php";
 		if (file_exists ( $snippetFile )) {
@@ -18,7 +23,23 @@ class whm_one {
 			echo "Bild " . $imageFile . " wurde nicht gefunden";
 		}
 	}
+
+    static function get_environment()
+    {
+    	switch ($_SERVER["HTTP_HOST"])
+    	{
+    	    case "thewebhatesme.local":
+    	    	return self::ENVIRONMENT_LOCAL;
+    	    case "beta.thewebhatesme.com":
+    	    	return self::ENVIRONMENT_BETA;
+    	    default:
+    	    	return self::ENVIRONMENT_LIVE;
+    	}
+    }
 }
+
+
+whm_one::get_environment();
 
 /**
  * Twenty Twelve functions and definitions.

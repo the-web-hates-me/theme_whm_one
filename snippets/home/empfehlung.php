@@ -1,6 +1,7 @@
 <?php
 
-    $recommendedPosts = array( 8, 4);
+    global $recommendedArticles;
+    $recommendedPosts = $recommendedArticles[whm_one::get_environment()];
 
 ?>
 
