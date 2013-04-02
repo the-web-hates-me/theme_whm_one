@@ -130,7 +130,11 @@ audio
 
 
 
+
+
 :not
+
+
 
 
 
@@ -181,79 +185,11 @@ controls
 
 
 
+
+
 )
 {
-display
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-none
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;
+display: none;
 }
 del {
 	color: #333;
@@ -315,13 +251,18 @@ body {
 	font-family: Helvetica, Arial, sans-serif;
 	text-rendering: optimizeLegibility;
 	color: #444;
-	text-align: center
+	text-align: center;
+	line-height: 2em;
 }
 
 a {
 	color: #e30083;
 	text-decoration: none;
 	font-weight: normal;
+}
+
+a:HOVER {
+	text-decoration: underline;
 }
 
 #header {
@@ -333,16 +274,15 @@ a {
 
 #content-body {
 	padding-top: 40px;
-	margin: 0px auto;
 	text-align: left;
 	width: 1280px;
 	margin: 0px auto;
 }
 
 .content {
+	#background-color: red;
 	float: left;
-	width: 940px;
-	margin-right: 20px;
+	width: 900px;
 }
 
 .sidebar {
@@ -358,8 +298,16 @@ a {
 	margin-bottom: 15px;
 }
 
+.headline a {
+	color: #444;
+}
+
+.headline a:hover {
+	text-decoration: none;
+}
+
 .single_2col {
-	width: 600px;
+	width: 613px;
 	float: left;
 	padding-right: 45px;
 }
@@ -395,7 +343,7 @@ a {
 }
 
 .kolumnen ul {
-	margin-left: 620px;
+	margin-left: 630px;
 	border-left: 1px solid #c0c0c0;
 }
 
@@ -418,4 +366,9 @@ a {
 
 .content-element {
 	padding-top: 60px;
+}
+
+.metainfo {
+	padding-top: 20px;
+	font-size: 0.8em;
 }

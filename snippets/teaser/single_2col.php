@@ -3,6 +3,7 @@
 
     $category = get_the_category();
     $firstCategory = $category[0]->cat_name;
+    $commentCount = get_comments_number();
 ?>
 
 <div class="single_2col">
@@ -16,12 +17,21 @@
     </div>
 
     <div class="title headline">
-       <?php the_title(); ?>
+       <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
     </div>
 
     <div class="excerpt">
         <?php the_excerpt();?>
         <a href="<?php the_permalink() ?>">Weiterlesen</a>
+    </div>
+
+    <div class="metainfo">
+        <div style="float: left; padding-right: 15px;">
+            <?php whm_one::render_image('comment.png'); ?>
+        </div>
+        <div>
+            <strong><?php echo $commentCount ?></strong> Kommentar<?php if ($commentCount != 1) echo "e" ?>
+        </div>
     </div>
 
 </div>

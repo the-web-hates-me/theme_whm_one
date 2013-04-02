@@ -1,6 +1,6 @@
 <div id="header">
 	<div class="content">
-	    <?php whm_one::render_image("logo.png"); ?><br />
+	    <a href="/"><?php whm_one::render_image("logo.png"); ?></a><br />
 	    the web hates me
 	</div>
 
