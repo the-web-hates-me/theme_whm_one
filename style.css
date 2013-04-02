@@ -316,12 +316,13 @@ a:HOVER {
 	position: relative;
 	left: -45px;
 	font-size: 0.8em;
-	margin-bottom: 5px;
+	margin-bottom: 0px;
 }
 
 .single_2col .category {
 	position: relative;
 	left: -60px;
+	padding-top: 6px;
 	float: left;
 	margin-right: 0px;
 	padding-right: 0px
@@ -339,7 +340,7 @@ a:HOVER {
 }
 
 .kolumnen {
-	padding-top: 15px;
+	padding-top: 30px;
 }
 
 .kolumnen ul {

@@ -12,6 +12,9 @@
         <?php
             $post = get_post($postId, "OBJECT");
             $commentCount = get_comments_number($postId);
+
+            $category = get_the_category($postId);
+            $firstCategory = $category[0]->cat_name;
         ?>
         <div>
             <div style="width: 300px; padding-right: 26px; float: left; padding-bottom: 26px;">
@@ -26,8 +29,9 @@
                         <div style="float: left; padding-right: 15px;">
                             <?php whm_one::render_image('comment.png'); ?>
                         </div>
-                        <div>
-                            <strong><?php echo $commentCount ?></strong> Kommentar<?php if ($commentCount != 1) echo "e" ?>
+                        <div style="line-height: 1.4em;">
+                            <strong><?php echo $commentCount ?></strong> Kommentar<?php if ($commentCount != 1) echo "e" ?><br />
+                            Kategorie: <strong><?php echo $firstCategory; ?></strong>.
                         </div>
                     </div>
 

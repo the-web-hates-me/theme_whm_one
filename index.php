@@ -38,6 +38,12 @@ get_header(); ?>
 	        <?php whm_one::render_snippet("home/empfehlung")?>
 	    </div>
 
+	    <div style="clear: both;"></div>
+
+	    <div class="content-element">
+	        <?php whm_one::render_snippet("home/neueartikel")?>
+	    </div>
+
 	</div>
 	<div class="sidebar">
 	    Sidebar
