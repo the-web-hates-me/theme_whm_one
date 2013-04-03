@@ -1,6 +1,6 @@
 <div class="span2 teaser-span2">
     <div class="category">
-       <?php whm_one::render_image('category/'.strtolower($postObject->whm_category->cat_name).'.png'); ?>
+       <?php whm_one::render_image('category/'.$postObject->whm_category->slug.'.png'); ?>
     </div>
     <div class="title headline">
          <a href="<?php echo $postObject->whm_permalink ?>"><?= $postObject->post_title; ?></a>

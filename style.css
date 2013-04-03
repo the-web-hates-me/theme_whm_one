@@ -15,7 +15,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
    Pink: e30083
 */
 body {
-	font-size: 13px;
+	font-size: 14px;
 	font-family: Helvetica, Arial, sans-serif;
 	text-rendering: optimizeLegibility;
 	color: #444;
@@ -33,21 +33,30 @@ a:hover {
 }
 
 .headline {
-	font-size: 2em;
+	font-size: 1.8em;
+	font-weight: 300;
+	font-style: normal;
 	padding-bottom: 20px;
-	font-family: 'Economica', sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
 }
 
 .headline a {
 	color: #444;
 	text-decoration: none;
+	font-weight: 300;
+}
+
+.kicker {
+	font-size: 0.8em;
+}
+
+.teaser-span4-left {
+	min-width: 600px;
 }
 
 .teaser-span4-left .kicker {
 	position: relative;
 	left: -45px;
-	font-size: 0.8em;
-	margin-bottom: 0px;
 }
 
 .teaser-span4-left .category {
@@ -61,7 +70,6 @@ a:hover {
 	position: relative;
 	left: -45px;
 	margin-left: 0px;
-
 }
 
 .teaser-span4-left .excerpt {
@@ -81,12 +89,12 @@ a:hover {
 	line-height: 2em;
 }
 
-.row {
-	padding-top: 40px;
+.section {
+	padding-top: 80px;
 }
 
 .teaser-span2 {
-	min-height: 500px;
+	min-height: 590px;
 	min-width: 300px;
 }
 
@@ -97,10 +105,11 @@ a:hover {
 
 .teaser-span2 .title {
 	min-height: 50px;
+	padding-left: 65px;
 }
 
 .teaser-span2 .headline {
-	font-size: 1.7em;
+	font-size: 1.5em;
 }
 
 .categories ul{
@@ -111,7 +120,7 @@ a:hover {
 .categories ul li{
 	float: left;
 	width: 155px;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	padding-bottom: 15px;
 }
 
@@ -121,4 +130,35 @@ a:hover {
 
 .whm_header categories ul li {
 	width: 200px;
+}
+
+.whm_header {
+	padding-top: 60px;
+}
+
+.home .kolumnen {
+	padding-top: 30px;
+}
+
+.home .kolumnen ul {
+	margin-left: 0px;
+	padding-left: 15px;
+	border-left : 1px #aaa solid;
+	list-style-type: none;
+}
+
+.home .empfehlung .span4  {
+	min-width: 600px;
+}
+
+.home .empfehlung .span4 .headline {
+	font-size: 1.5em;
+}
+
+.home .empfehlung .post {
+	margin-bottom: 60px;
+}
+
+.sidebar {
+	padding-top: 105px;
 }
