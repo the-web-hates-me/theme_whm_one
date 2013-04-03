@@ -1,11 +1,12 @@
 <?php
 
+ini_set ( 'display_errors', 1 );
+error_reporting ( E_ALL );
 class whm_one {
 	const ENVIRONMENT_LOCAL = "local";
 	const ENVIRONMENT_BETA = "beta";
 	const ENVIRONMENT_LIVE = "live";
-
-	static function render_snippet($snippetName) {
+	static function render_snippet($snippetName, array $data = array()) {
 		$snippetFile = __DIR__ . "/snippets/" . $snippetName . ".php";
 		if (file_exists ( $snippetFile )) {
 			include $snippetFile;
@@ -13,7 +14,6 @@ class whm_one {
 			echo "Snippet " . $snippetFile . " wurde nicht gefunden";
 		}
 	}
-
 	static function render_image($imageName) {
 		$imageFile = "/images/" . $imageName;
 		if (file_exists ( __DIR__ . $imageFile )) {
@@ -23,23 +23,50 @@ class whm_one {
 			echo "Bild " . $imageFile . " wurde nicht gefunden";
 		}
 	}
+	static function get_environment() {
+		switch ($_SERVER ["HTTP_HOST"]) {
+			case "thewebhatesme.local" :
+				return self::ENVIRONMENT_LOCAL;
+			case "beta.thewebhatesme.com" :
+				return self::ENVIRONMENT_BETA;
+			default :
+				return self::ENVIRONMENT_LIVE;
+		}
+	}
+	static function render_teaser($teaserName, $postObject) {
+		$snippetFile = __DIR__ . "/snippets/" . $teaserName . ".php";
+		if (file_exists ( $snippetFile )) {
+			// Templatevariablen hinzufügen
 
-    static function get_environment()
-    {
-    	switch ($_SERVER["HTTP_HOST"])
-    	{
-    	    case "thewebhatesme.local":
-    	    	return self::ENVIRONMENT_LOCAL;
-    	    case "beta.thewebhatesme.com":
-    	    	return self::ENVIRONMENT_BETA;
-    	    default:
-    	    	return self::ENVIRONMENT_LIVE;
-    	}
-    }
+			// Kategorie
+			$categories = get_the_category ( $postObject->ID );
+			$postObject->whm_category = $categories [0];
+
+			// Formatiertes Datum
+			$postObject->whm_formatted_date = date ( 'd.m.Y', strtotime ( $postObject->post_date ) );
+
+			// Aurorentname
+			$postObject->whm_author_name = get_author_name ( $postObject->post_author );
+
+			// Permalink
+			$postObject->whm_permalink = get_permalink ( $postObject->ID );
+
+			// Excerpt / Anriss
+			$postObject->whm_excerpt = substr(strip_tags($postObject->post_content), 0, 600);
+
+			// Kommentaranzahl & formatierter String
+			$postObject->whm_comment_count = get_comments_number ( $postObject->ID );
+			$postObject->whm_comment_count_string = "<strong>".$postObject->whm_comment_count."</strong> Kommentar";
+			if ($postObject->whm_comment_count != 1) $postObject->whm_comment_count_string .= "e";
+
+			include $snippetFile;
+		} else {
+			echo "Snippet " . $snippetFile . " wurde nicht gefunden";
+		}
+	}
 }
 
-
-whm_one::get_environment();
+whm_one::get_environment ();
 
 /**
  * Twenty Twelve functions and definitions.
@@ -315,8 +342,12 @@ if (! function_exists ( 'twentytwelve_content_nav' )) :
 
 
 
-<?php endif;
+
+
+		<?php endif;
 	}
+
+
 
 
 
@@ -351,6 +382,8 @@ if (! function_exists ( 'twentytwelve_comment' )) :
 				// Proceed with normal comments.
 				global $post;
 				?>
+
+
 
 
 
@@ -400,6 +433,8 @@ if (! function_exists ( 'twentytwelve_comment' )) :
 
 
 
+
+
 endif;
 
 if (! function_exists ( 'twentytwelve_entry_meta' )) :
@@ -436,6 +471,8 @@ if (! function_exists ( 'twentytwelve_entry_meta' )) :
 
 		printf ( $utility_text, $categories_list, $tag_list, $date, $author );
 	}
+
+
 
 
 

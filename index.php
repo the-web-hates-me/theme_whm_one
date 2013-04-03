@@ -1,56 +1,54 @@
-<?php
-/**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * For example, it puts together the home page when no home.php file exists.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
- */
+<!DOCTYPE html>
+<html lang="en">
+  <head>
 
-include_once __DIR__.'/config/home.config.php';
-get_header(); ?>
+    <!-- Le styles -->
+    <link href="<?php bloginfo ( "template_directory" ); ?>/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="<?php bloginfo ( "template_directory" ); ?>/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+    <link href="<?php bloginfo ( "template_directory" ); ?>/style.css" rel="stylesheet" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
 
+  </head>
 
-<div id="content-body">
-	<div class="content">
+  <body>
 
-	    <div class="content-element">
-    	    <?php whm_one::render_snippet("teaser/single_2col"); ?>
-    	    <?php whm_one::render_snippet("home/kolumnen"); ?>
-	    </div>
+    <?php whm_one::render_snippet('global/header')?>
 
-	    <div style="clear: both;"></div>
+    <div class="container">
+        <div class="row">
+            <div class="span6">
 
-	    <div class="content-element">
-	        <?php whm_one::render_image("banner_728.png")?>
-	    </div>
+            <!-- Erste Zeile - Neuster Artikel & Kolumenen -->
 
-	    <div style="clear: both;"></div>
+                <div class="row">
+                    <div class="span4">
+                        <?php whm_one::render_teaser('teaser/span4-left', get_post()); ?>
+                    </div>
+                    <div class="span2">
+                        <?php whm_one::render_snippet('widgets/kolumnen-span2'); ?>
+                    </div>
+                </div>
 
-	    <div class="content-element">
-	        <?php whm_one::render_snippet("home/empfehlung")?>
-	    </div>
+           <!-- Zweite Zeile - Werbung -->
 
-	    <div style="clear: both;"></div>
+                <div class="row">
+                    <div class="span6">
+                        <?php whm_one::render_snippet('banner/728'); ?>
+                    </div>
+                </div>
 
-	    <div class="content-element">
-	        <?php whm_one::render_snippet("home/neueartikel")?>
-	    </div>
+           <!-- Dritte Zeile - Empfehlung der Redaktion-->
 
-	</div>
-	<div class="sidebar">
-	    Sidebar
-        <?php get_sidebar(); ?>
-	</div>
-</div>
+                <div class="row">
+                        <?php whm_one::render_snippet("home/empfehlungsliste"); ?>
+                </div>
 
-<div style="clear:both"></div>
+            </div>
+            <div class="span2">
+                Sidebar
+            </div>
+        </div>
+    </div> <!-- /container -->
 
-<?php get_footer(); ?>
+  </body>
+</html>

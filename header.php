@@ -22,7 +22,3 @@
 <?php whm_one::render_snippet("html_head")?>
 
 <body <?php body_class(); ?>>
-
-<header>
-    <?php whm_one::render_snippet("header")?>
-</header>
