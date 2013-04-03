@@ -12,6 +12,6 @@
     	    <a href="/"><?php whm_one::render_image("logo.png"); ?></a><br />
     	    the web hates me
         </div>
-        <div class="span2">&Uuml;ber uns | Impressum</div>
+        <div class="span2  visible-desktop">&Uuml;ber uns | Impressum</div>
     </div>
 </div>

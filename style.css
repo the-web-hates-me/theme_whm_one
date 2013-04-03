@@ -84,3 +84,21 @@ a:hover {
 .row {
 	padding-top: 40px;
 }
+
+.teaser-span2 {
+	min-height: 500px;
+	min-width: 300px;
+}
+
+.teaser-span2 .category {
+	float: left;
+	padding-right: 20px;
+}
+
+.teaser-span2 .title {
+	min-height: 50px;
+}
+
+.teaser-span2 .headline {
+	font-size: 1.7em;
+}

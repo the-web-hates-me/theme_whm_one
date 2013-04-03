@@ -2,6 +2,15 @@
 
 ini_set ( 'display_errors', 1 );
 error_reporting ( E_ALL );
+
+function substr_word($string, $length, $placeholder=' ...') {
+	if (strlen($string) > $length) {
+		$string = substr($string, 0, $length);
+		$string = substr($string, 0, strrpos($string, ' ')) .$placeholder;
+	}
+	return $string;
+}
+
 class whm_one {
 	const ENVIRONMENT_LOCAL = "local";
 	const ENVIRONMENT_BETA = "beta";
@@ -34,6 +43,10 @@ class whm_one {
 		}
 	}
 	static function render_teaser($teaserName, $postObject) {
+		if( is_null($postObject )) {
+			echo "Postobjekt ist null";
+			return;
+		}
 		$snippetFile = __DIR__ . "/snippets/" . $teaserName . ".php";
 		if (file_exists ( $snippetFile )) {
 			// Templatevariablen hinzufügen
@@ -52,7 +65,8 @@ class whm_one {
 			$postObject->whm_permalink = get_permalink ( $postObject->ID );
 
 			// Excerpt / Anriss
-			$postObject->whm_excerpt = substr(strip_tags($postObject->post_content), 0, 600);
+			$postObject->whm_excerpt =  substr_word(strip_tags($postObject->post_content), 600);
+			//$postObject->whm_excerpt = substr(strip_tags($postObject->post_content), 0, 600) . " [...]";
 
 			// Kommentaranzahl & formatierter String
 			$postObject->whm_comment_count = get_comments_number ( $postObject->ID );

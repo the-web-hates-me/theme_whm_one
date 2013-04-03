@@ -3,8 +3,8 @@
   <head>
 
     <!-- Le styles -->
-    <link href="<?php bloginfo ( "template_directory" ); ?>/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="<?php bloginfo ( "template_directory" ); ?>/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+    <link href="<?php bloginfo ( "template_directory" ); ?>/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="<?php bloginfo ( "template_directory" ); ?>/style.css" rel="stylesheet" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
 
@@ -24,7 +24,7 @@
                     <div class="span4">
                         <?php whm_one::render_teaser('teaser/span4-left', get_post()); ?>
                     </div>
-                    <div class="span2">
+                    <div class="span2 visible-desktop">
                         <?php whm_one::render_snippet('widgets/kolumnen-span2'); ?>
                     </div>
                 </div>
@@ -43,8 +43,14 @@
                         <?php whm_one::render_snippet("home/empfehlungsliste"); ?>
                 </div>
 
+           <!-- Vierte Zeile - Neuste Artikel -->
+
+                <div class="row">
+                        <?php whm_one::render_snippet("home/neuste-artikel"); ?>
+                </div>
+
             </div>
-            <div class="span2">
+            <div class="span2 visible-desktop">
                 Sidebar
             </div>
         </div>
