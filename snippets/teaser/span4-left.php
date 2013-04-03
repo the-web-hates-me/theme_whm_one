@@ -1,6 +1,6 @@
 <div class="teaser-span4-left">
     <div class="category">
-       <?php whm_one::render_image('category/'.strtolower($postObject->whm_category->cat_name).'.png'); ?>
+       <?php whm_one::render_image('category/'.$postObject->whm_category->slug.'.png'); ?>
     </div>
 
     <div class="kicker">
