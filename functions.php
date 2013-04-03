@@ -78,6 +78,9 @@ class whm_one {
 			echo "Snippet " . $snippetFile . " wurde nicht gefunden";
 		}
 	}
+    static function shortenCategory($categoryName){
+    	return str_replace('management', 'mgmt.', $categoryName);
+    }
 }
 
 whm_one::get_environment ();

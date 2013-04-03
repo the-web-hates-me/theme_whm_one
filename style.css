@@ -102,3 +102,23 @@ a:hover {
 .teaser-span2 .headline {
 	font-size: 1.7em;
 }
+
+.categories ul{
+	margin-left: 0px;
+	list-style-type: none;
+}
+
+.categories ul li{
+	float: left;
+	width: 155px;
+	font-size: 0.9em;
+	padding-bottom: 15px;
+}
+
+.categories img {
+	padding-right: 10px;
+}
+
+.whm_header categories ul li {
+	width: 200px;
+}

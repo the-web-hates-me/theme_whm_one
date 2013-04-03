@@ -50,8 +50,8 @@
                 </div>
 
             </div>
-            <div class="span2 visible-desktop">
-                Sidebar
+            <div class="span2 visible-desktop sidebar">
+                <?php whm_one::render_snippet("global/sidebar"); ?>
             </div>
         </div>
     </div> <!-- /container -->
