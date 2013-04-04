@@ -69,7 +69,7 @@ a:hover {
 .teaser-span4-left .title {
 	position: relative;
 	left: -45px;
-	margin-left: 0px;
+	margin-left: 45px;
 }
 
 .teaser-span4-left .excerpt {
