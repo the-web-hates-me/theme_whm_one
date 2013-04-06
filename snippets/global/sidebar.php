@@ -19,7 +19,8 @@
 </div>
 
 <div class="row">
-    <div class="span2 sidebar-element">
+    <div class="span2 sidebar-element recent-comments">
          <div class="headline">Neue Kommentare</div>
+         <?php whm_one::render_recent_comments(); ?>
     </div>
 </div>

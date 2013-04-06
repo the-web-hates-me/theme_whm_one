@@ -174,3 +174,13 @@ a:hover {
 	margin-top: 10px;
 	margin-right: 10px;
 }
+
+.sidebar .recent-comments ul {
+	list-style: disc;
+	margin-left: 20px;
+	font-size: 0.8em;
+}
+
+.sidebar .recent-comments ul a {
+	color: #444;
+}

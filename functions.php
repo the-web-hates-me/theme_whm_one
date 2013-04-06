@@ -86,9 +86,26 @@ class whm_one {
     {
     	return get_bloginfo ( "template_directory", 'display' );
     }
-}
 
-whm_one::get_environment ();
+    function render_recent_comments($limit=5) {
+    	global $wpdb;
+    	$sql = "
+    	SELECT DISTINCT comment_post_ID, comment_author, comment_date_gmt, comment_approved, SUBSTRING(comment_content,1,100) AS com_excerpt
+    	FROM $wpdb->comments
+    	WHERE comment_approved = '1'
+    	ORDER BY comment_date_gmt DESC
+    	LIMIT ".$limit;
+    	$comments = $wpdb->get_results($sql);
+    	$output= '<ul>';
+         foreach ($comments as $comment) {
+         	    $post = get_post($comment->comment_post_ID);
+         	    $permalink = get_permalink ( $post->ID );
+                 $output .= '<li><a href="'.$permalink.'"><strong>'. $comment->comment_author . '</strong> in "' . strip_tags(substr_word($post->post_title, 40, "...")).'"</a></li>';
+            	}
+         $output .= '</ul>';
+    	echo $output;
+    }//end function
+}
 
 /**
  * Twenty Twelve functions and definitions.
