@@ -162,3 +162,15 @@ a:hover {
 .sidebar {
 	padding-top: 105px;
 }
+
+.sidebar .sidebar-element {
+	padding-bottom: 40px;
+	border-bottom: 1px #aaa solid;
+	margin-bottom: 20px;
+}
+
+.sidebar #s {
+	width: 280px;
+	margin-top: 10px;
+	margin-right: 10px;
+}

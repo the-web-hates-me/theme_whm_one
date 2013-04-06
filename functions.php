@@ -26,7 +26,7 @@ class whm_one {
 	static function render_image($imageName) {
 		$imageFile = "/images/" . $imageName;
 		if (file_exists ( __DIR__ . $imageFile )) {
-			$imageUrl = get_bloginfo ( "template_directory", 'display' ) . $imageFile;
+			$imageUrl = self::getImagePath() . $imageFile;
 			echo "<img src='$imageUrl' />";
 		} else {
 			echo "Bild " . $imageFile . " wurde nicht gefunden";
@@ -80,6 +80,11 @@ class whm_one {
 	}
     static function shortenCategory($categoryName){
     	return str_replace('management', 'mgmt.', $categoryName);
+    }
+
+    static function getImagePath()
+    {
+    	return get_bloginfo ( "template_directory", 'display' );
     }
 }
 
