@@ -24,3 +24,10 @@
          <?php whm_one::render_recent_comments(); ?>
     </div>
 </div>
+
+<div class="row">
+    <div class="span2">
+        <div class="headline">Werbung</div>
+         <?php whm_one::render_snippet("banner/300"); ?>
+    </div>
+</div>

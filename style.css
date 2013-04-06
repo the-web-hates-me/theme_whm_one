@@ -112,12 +112,12 @@ a:hover {
 	font-size: 1.5em;
 }
 
-.categories ul{
+.categories ul {
 	margin-left: 0px;
 	list-style-type: none;
 }
 
-.categories ul li{
+.categories ul li {
 	float: left;
 	width: 155px;
 	font-size: 0.8em;
@@ -143,11 +143,11 @@ a:hover {
 .home .kolumnen ul {
 	margin-left: 0px;
 	padding-left: 15px;
-	border-left : 1px #aaa solid;
+	border-left: 1px #aaa solid;
 	list-style-type: none;
 }
 
-.home .empfehlung .span4  {
+.home .empfehlung .span4 {
 	min-width: 600px;
 }
 
@@ -183,4 +183,10 @@ a:hover {
 
 .sidebar .recent-comments ul a {
 	color: #444;
+}
+
+#footer {
+	width: 100%;
+	background-color: #aaa;
+	margin-bottom: 60px;
 }

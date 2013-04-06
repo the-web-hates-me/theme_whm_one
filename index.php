@@ -66,5 +66,7 @@
         </div>
     </div> <!-- /container -->
 
+    <?php whm_one::render_snippet('global/footer')?>
+
   </body>
 </html>
