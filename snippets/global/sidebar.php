@@ -1,3 +1,6 @@
+
+
+
 <div class="row">
     <div class="span2">
         <div class="headline">Suche</div>
@@ -6,7 +9,7 @@
 </div>
 
 <div class="row">
-        <div class="span2 sidebar-element">
+        <div class="span2 sidebar-element sticky-sidebar">
             <div class="headline">Kategorien</div>
             <?php whm_one::render_snippet("global/partials/categories"); ?>
         </div>
@@ -14,7 +17,7 @@
 
 <div class="row">
     <div class="span2 sidebar-element">
-        <div class="fb-like-box" data-border-color="white" data-href="http://www.facebook.com/thewebhatesme" data-width="292" data-show-faces="true" data-stream="false" data-header="false"></div>
+         <?php whm_one::render_snippet("global/sidebar/facebook"); ?>
     </div>
 </div>
 
@@ -31,3 +34,9 @@
          <?php whm_one::render_snippet("banner/300"); ?>
     </div>
 </div>
+
+<script type="text/javascript">
+$('.sticky-sidebar').waypoint('sticky', {
+	  offset: 30 // Apply "stuck" when element 30px from top
+	});
+</script>

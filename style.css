@@ -188,5 +188,24 @@ a:hover {
 #footer {
 	width: 100%;
 	background-color: #aaa;
-	margin-bottom: 60px;
+	margin-bottom: 10px;
+}
+
+#sponsor {
+	color: #aaa;
+	margin-bottom: 50px;
+}
+
+#sponsor a {
+	color: #aaa;
+}
+
+.sticky-sidebar {
+	background-color: white;
+}
+
+.stuck {
+	position: fixed;
+	top: 0px;
+	padding-top: 20px;
 }

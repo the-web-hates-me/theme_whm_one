@@ -3,24 +3,20 @@
   <head>
 
     <!-- Le styles -->
-    <link href="<?php bloginfo ( "template_directory" ); ?>/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
     <link href="<?php bloginfo ( "template_directory" ); ?>/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="<?php bloginfo ( "template_directory" ); ?>/style.css" rel="stylesheet" media="screen">
+
+    <script src="<?php bloginfo ( "template_directory" ); ?>/js/jquery-1.9.1.min.js"></script>
+
+    <!-- jquery Waypoints -->
+    <script src="<?php bloginfo ( "template_directory" ); ?>/js/waypoints.min.js"></script>
+    <script src="<?php bloginfo ( "template_directory" ); ?>/js/waypoints-sticky.min.js"></script>
 
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic' rel='stylesheet' type='text/css'>
 
   </head>
 
   <body class="home">
-
-      <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
 
     <?php whm_one::render_snippet('global/header')?>
 

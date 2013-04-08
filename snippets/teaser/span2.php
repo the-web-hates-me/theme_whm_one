@@ -7,7 +7,7 @@
     </div>
     <div class="excerpt">
         <?= $postObject->whm_excerpt; ?>
-        <a href="<?php echo $postObject->whm_permalink ?>">weiterlesen.</a>
+        <a href="<?php echo $postObject->whm_permalink ?>">weiterlesen</a>
     </div>
 
      <?php whm_one::render_snippet("teaser/partials/metainfo", array( "postObject" => $postObject ))?>
